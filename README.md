@@ -17,3 +17,14 @@ Both files need to be modified because WebSocket is a connection-based protocol 
 both sides (server and client) must agree on the same port, like two people
 agreeing on which phone number to call.
 The `ws://` prefix in the client indicates it is using the WebSocket protocol.
+
+## Experiment 2.3: Small changes, add IP and Port
+
+![Experiment 2.3](screenshots/Image6.jpeg)
+
+Modified the server to prepend the sender's IP address and port to each
+broadcasted message. This is done by formatting the message as
+`"{addr}: {text}"` before sending it to the broadcast channel.
+The change is only needed on the server side since the server is the one
+that receives and rebroadcasts messages — the client just displays
+whatever the server sends.
